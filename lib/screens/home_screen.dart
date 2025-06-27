@@ -29,11 +29,26 @@ class _HomeScreenState extends State<HomeScreen> {
       final race = data['MRData']['RaceTable']['Races'][0];
 
       final sessionsTemp = [
-        {'title': '1. szabadedzés', 'time': race['FirstPractice']?['date'] + ' ' + race['FirstPractice']?['time'] ?? ''},
-        {'title': '2. szabadedzés', 'time': race['SecondPractice']?['date'] + ' ' + race['SecondPractice']?['time'] ?? ''},
-        {'title': '3. szabadedzés', 'time': race['ThirdPractice']?['date'] + ' ' + race['ThirdPractice']?['time'] ?? ''},
-        {'title': 'Időmérő', 'time': race['Qualifying']?['date'] + ' ' + race['Qualifying']?['time'] ?? ''},
-        {'title': 'Futam', 'time': race['date'] + ' ' + race['time']},
+        {
+          'title': '1. szabadedzés',
+          'time': ((race['FirstPractice']?['date'] ?? '') + ' ' + (race['FirstPractice']?['time'] ?? '')).trim()
+        },
+        {
+          'title': '2. szabadedzés',
+          'time': ((race['SecondPractice']?['date'] ?? '') + ' ' + (race['SecondPractice']?['time'] ?? '')).trim()
+        },
+        {
+          'title': '3. szabadedzés',
+          'time': ((race['ThirdPractice']?['date'] ?? '') + ' ' + (race['ThirdPractice']?['time'] ?? '')).trim()
+        },
+        {
+          'title': 'Időmérő',
+          'time': ((race['Qualifying']?['date'] ?? '') + ' ' + (race['Qualifying']?['time'] ?? '')).trim()
+        },
+        {
+          'title': 'Futam',
+          'time': (race['date'] ?? '') + ' ' + (race['time'] ?? '')
+        },
       ];
 
       setState(() {
