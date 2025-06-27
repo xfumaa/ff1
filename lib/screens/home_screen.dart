@@ -52,7 +52,8 @@ class _HomeScreenState extends State<HomeScreen> {
       ];
 
       setState(() {
-        sessions = sessionsTemp;
+        // Itt a lényeg: explicit konverzió Map<String, String>-re
+        sessions = sessionsTemp.map((e) => Map<String, String>.from(e)).toList();
         loading = false;
       });
     } else {
