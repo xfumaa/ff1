@@ -9,6 +9,8 @@ found in the LICENSE file. -->
          to allow setting breakpoints, to provide hot reload, etc.
     -->
     <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+
 
     <!-- ${applicationName} is used by the Flutter tool to select the Application
          class to use. For most apps, this is the default Android application.
